@@ -1,0 +1,15 @@
+services:
+  next-auth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_AUTH0_DOMAIN=${NEXT_PUBLIC_AUTH0_DOMAIN}
+        - NEXT_PUBLIC_AUTH0_CLIENT_ID=${NEXT_PUBLIC_AUTH0_CLIENT_ID}
+    container_name: next-auth
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+# I used the modern syntax, to run it use "docker compose up --build"
