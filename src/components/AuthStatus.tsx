@@ -1,6 +1,7 @@
 "use client"
 
 import { useSession, signIn, signOut } from "next-auth/react"
+import Link from "next/link"
 
 export default function AuthStatus() {
   const { data: session, status } = useSession()
@@ -12,7 +13,13 @@ export default function AuthStatus() {
   if (session) {
     return (
       <div className="flex items-center gap-4">
-        <p>Signed in as {session.user?.email}</p>
+        <p>Kullanıcı girişi yapıldı: {session.user?.email}</p>
+        <Link
+          href="/dashboard"
+          className="rounded-md bg-slate-500 px-4 py-2 text-white"
+        >
+          Dashboard&apos;a Git
+        </Link>
         <button
           onClick={() => signOut()}
           className="rounded-md bg-slate-900 px-4 py-2 text-white"
