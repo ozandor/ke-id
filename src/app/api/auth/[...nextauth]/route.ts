@@ -6,9 +6,9 @@ export const authOptions: NextAuthOptions = {
   // Auth0 providers
   providers: [
     Auth0Provider({
-      clientId: process.env.AUTH0_CLIENT_ID!,
+      clientId: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID!,
       clientSecret: process.env.AUTH0_CLIENT_SECRET!,
-      issuer: process.env.AUTH0_DOMAIN!,
+      issuer: process.env.NEXT_PUBLIC_AUTH0_DOMAIN!,
     }),
     // We can add more OAuth here like Google, Github, Microsoft etc.
   ],

@@ -6,6 +6,21 @@ import Link from "next/link"
 export default function AuthStatus() {
   const { data: session, status } = useSession()
 
+  // Handles the sign out process with Auth0
+  const handleSignOut = async () => {
+    const domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN
+    const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID
+    const returnTo = window.location.origin
+
+    // Local session cleared
+    await signOut({ redirect: false })
+
+    // Redirect to Auth0 to clear the remote session  (Official, universal logout door of our Auth0)
+    window.location.href = `${domain}/v2/logout?client_id=${clientId}&returnTo=${encodeURIComponent(
+      returnTo
+    )}`
+  }
+
   if (status === "loading") {
     return <p>Yükleniyor...</p>
   }
@@ -21,7 +36,7 @@ export default function AuthStatus() {
           Dashboard&apos;a Git
         </Link>
         <button
-          onClick={() => signOut()}
+          onClick={handleSignOut}
           className="rounded-md bg-slate-900 px-4 py-2 text-white"
         >
           Sign out
