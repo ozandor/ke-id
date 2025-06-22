@@ -39,7 +39,7 @@ export default function AuthStatus() {
           onClick={handleSignOut}
           className="rounded-md bg-slate-900 px-4 py-2 text-white"
         >
-          Sign out
+          Çıkış Yap
         </button>
       </div>
     )
