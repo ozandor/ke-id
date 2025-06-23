@@ -27,17 +27,17 @@ export default function AuthStatus() {
 
   if (session) {
     return (
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col items-center gap-4">
         <p>Kullanıcı girişi yapıldı: {session.user?.email}</p>
         <Link
           href="/dashboard"
-          className="rounded-md bg-slate-500 px-4 py-2 text-white"
+          className="w-max transform rounded-2xl bg-amber-400 p-4 text-center transition hover:scale-110 hover:bg-amber-300 dark:bg-slate-700 dark:hover:bg-slate-800"
         >
-          Dashboard&apos;a Git
+          Dashboard
         </Link>
         <button
           onClick={handleSignOut}
-          className="rounded-md bg-slate-900 px-4 py-2 text-white"
+          className="w-max transform rounded-2xl bg-amber-400 p-4 text-center transition hover:scale-110 hover:bg-amber-300 dark:bg-slate-700 dark:hover:bg-slate-800"
         >
           Çıkış Yap
         </button>
@@ -50,7 +50,7 @@ export default function AuthStatus() {
       <p>Henüz giriş yapılmadı.</p>
       <button
         onClick={() => signIn("auth0")}
-        className="w-max transform rounded-2xl bg-gray-700 p-4 text-center transition hover:scale-105 hover:bg-gray-600"
+        className="w-max transform rounded-2xl bg-amber-400 p-4 text-center transition hover:scale-110 hover:bg-amber-300 dark:bg-slate-700 dark:hover:bg-slate-800"
       >
         Giriş Yap
       </button>

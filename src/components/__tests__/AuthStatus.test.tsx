@@ -66,7 +66,7 @@ describe("AuthStatus Bileşeni", () => {
         screen.getByRole("button", { name: /Çıkış Yap/i })
       ).toBeInTheDocument()
       expect(
-        screen.getByRole("link", { name: /Dashboard'a Git/i })
+        screen.getByRole("link", { name: /Dashboard/i })
       ).toBeInTheDocument()
     })
 
