@@ -16,7 +16,7 @@ This project shows how to build a full authentication system using the Next.js A
 
 ## Getting Started
 
-Follow these instructions to get the project running on your local machine for development and testing purposes.
+Follow these instructions to get the project running on your local machine for development and testing purposes. (or you can use Docker Image in the bottom)
 
 ### Prerequisites
 
