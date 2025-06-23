@@ -46,18 +46,13 @@ cp .env.example .env
 Next, open the newly created `.env` file and fill in the values. These credentials come from your **Auth0 Application Settings**.
 
 ```env
-# Auth.js
-AUTH_SECRET="YOUR_AUTH_SECRET" # Generate one: https://generate-secret.vercel.app/
-AUTH_URL="http://localhost:3000"
-
-# Auth0 Provider
-AUTH0_CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
-AUTH0_CLIENT_SECRET="YOUR_AUTH0_CLIENT_SECRET"
-AUTH0_ISSUER="YOUR_AUTH0_ISSUER_BASE_URL" # e.g., https://your-tenant.us.auth0.com
-
-# Public URLs (for client-side logout)
-NEXT_PUBLIC_AUTH0_DOMAIN="YOUR_AUTH0_DOMAIN" # e.g., your-tenant.us.auth0.com
-NEXT_PUBLIC_AUTH0_CLIENT_ID="YOUR_AUTH0_CLIENT_ID"
+# Domain and Client id have to be public
+NEXT_PUBLIC_AUTH0_DOMAIN=""
+NEXT_PUBLIC_AUTH0_CLIENT_ID=""
+AUTH0_CLIENT_SECRET=""
+# Auth0 suggested to generate secret with command: openssl rand -base64 32
+NEXTAUTH_SECRET=""
+NEXTAUTH_URL="http://localhost:3000"
 ```
 
 > **Note:** The custom `role` claim required for RBAC must be configured in your Auth0 dashboard using an **Action**. The namespace for the claim must match `http://localhost:3000/roles`.
