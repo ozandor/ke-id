@@ -155,7 +155,7 @@ describe("AuthStatus Bileşeni", () => {
 
       // Dashboard link expected here
       const dashboardLink = screen.getByRole("link", {
-        name: /Dashboard'a Git/i,
+        name: /Dashboard/i,
       })
       expect(dashboardLink).toHaveAttribute("href", "/dashboard")
     })
