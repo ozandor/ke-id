@@ -1,6 +1,6 @@
-# Next.js & Auth0: Full Authentication & RBAC Project
+# Next.js & Auth0 Authentication Project
 
-This project is a comprehensive demonstration of a full authentication system built with Next.js (App Router), NextAuth.js, and Auth0. It includes Role-Based Access Control (RBAC) to protect specific routes, a complete testing setup with Jest and React Testing Library, and full containerization with Docker.
+This project shows how to build a full authentication system using the Next.js App Router, NextAuth.js, and Auth0. It includes Role-Based Access Control (RBAC) to protect certain pages, a testing setup. Fully containerized with Docker.
 
 ## Technologies & Principles
 
@@ -138,3 +138,13 @@ To run tests in watch mode:
 ```bash
 npm test -- --watch
 ```
+
+### Checking Test Coverage
+
+To generate a report showing how much of your code is covered by tests, run:
+
+```bash
+npm test -- --coverage
+```
+
+This will create a `coverage` directory in your project. Open the `lcov-report/index.html` file in your browser to see a detailed, interactive report of your test coverage.
